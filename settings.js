@@ -16,8 +16,8 @@ global.botname = 'Gura Bot'
 global.listprefix = ['+','!','.']
 global.listv = ['➩','➢','➣','➤','✦','✧']
 global.tempatDB = 'database.json'
-global.pairing_code = false
-global.number_bot = ''
+global.pairing_code = true
+global.number_bot = '6281575074898'
 
 global.fake = {
 	anonim: 'https://ar-hosting.pages.dev/1739562361203.jpg',
