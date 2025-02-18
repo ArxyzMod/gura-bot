@@ -1621,6 +1621,7 @@ case '19rujxl1e': {
 			break
 			case 'sticker': case 'stiker': case 's': case 'stickergif': case 'stikergif': case 'sgif': case 'stickerwm': case 'swm': case 'curi': case 'colong': case 'take': case 'stickergifwm': case 'sgifwm': {
 				if (!/image|video|sticker/.test(quoted.type)) return m.reply(`Kirim/reply gambar/video/gif dengan caption ${prefix + command}\nDurasi Image/Video/Gif 1-9 Detik`)
+				await naze.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
 				let media = await quoted.download()
 				let teks1 = text.split`|`[0] ? text.split`|`[0] : ''
 				let teks2 = text.split`|`[1] ? text.split`|`[1] : ''
@@ -1642,6 +1643,7 @@ case '19rujxl1e': {
 					if (!isLimit) return m.reply(mess.limit)
 					if (!/image|webp/.test(mime)) return m.reply(`Kirim/reply image/sticker\nDengan caption ${prefix + command} atas|bawah`)
 					if (!text) return m.reply(`Kirim/reply image/sticker dengan caption ${prefix + command} atas|bawah`)
+					await naze.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
 					m.reply(mess.wait)
 					let atas = text.split`|`[0] ? text.split`|`[0] : '-'
 					let bawah = text.split`|`[1] ? text.split`|`[1] : '-'
@@ -1660,6 +1662,7 @@ case '19rujxl1e': {
 				if (!text) return m.reply(`Example: ${prefix + command} 😅+🤔`)
 				let [emoji1, emoji2] = text.split`+`
 				if (!emoji1 && !emoji2) return m.reply(`Example: ${prefix + command} 😅+🤔`)
+				await naze.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
 				try {
 					let anu = await axios.get(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
 					if (anu.data.results.length < 1) return m.reply(`Mix Emoji ${text} Tidak Ditemukan!`)
@@ -1675,6 +1678,7 @@ case '19rujxl1e': {
 			case 'qc': case 'quote': case 'fakechat': {
 				if (!isLimit) return m.reply(mess.limit)
 				if (!text && !m.quoted) return m.reply(`Kirim/reply pesan *${prefix + command}* Teksnya`)
+				await naze.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
 				try {
 					let ppnya = await naze.profilePictureUrl(m.sender, 'image').catch(() => 'https://i.pinimg.com/564x/8a/e9/e9/8ae9e92fa4e69967aa61bf2bda967b7b.jpg');
 					let res = await quotedLyo(text, m.pushName, ppnya);
@@ -1688,6 +1692,7 @@ case '19rujxl1e': {
 			case 'brat': {
 				if (!isLimit) return m.reply(mess.limit)
 				if (!text && (!m.quoted || !m.quoted.text)) return m.reply(`Kirim/reply pesan *${prefix + command}* Teksnya`)
+				await naze.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
 				try {
 					await naze.sendAsSticker(m.chat, 'https://brat.caliphdev.com/api/brat?text=' + encodeURIComponent(text || m.quoted.text), m)
 					setLimit(m, db)
@@ -1704,6 +1709,7 @@ case '19rujxl1e': {
 			case 'bratvid': case 'bratvideo': {
 				if (!isLimit) return m.reply(mess.limit)
 				if (!text && (!m.quoted || !m.quoted.text)) return m.reply(`Kirim/reply pesan *${prefix + command}* Teksnya`)
+				await naze.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
 				const teks = (m.quoted ? m.quoted.text : text).split(' ');
 				const tempDir = path.join(process.cwd(), 'database/sampah');
 				try {
@@ -2026,6 +2032,7 @@ case '19rujxl1e': {
 			break
 			case 'play': {
  if (args.length === 0) return naze.sendMessage(m.chat, { text: `Ketikkan nama lagu atau URL YouTube, misalnya:\nplay dj kane` }, { quoted: m });
+				await naze.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
 
  const query = args.join(' ');
  const axios = require('axios');
