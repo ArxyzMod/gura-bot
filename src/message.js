@@ -57,7 +57,7 @@ async function GroupParticipantsUpdate(naze, { id, participants, author, action 
 				}
 				let messageText;
 				if (action === 'add') {
-					messageText = `Selamat Datang @${n.split('@')[0]} Silahkan Intro Dulu Ya Kak😊\n\n╭―════⊹⊱≼≽⊰⊹══════―\n⋮ Nama :\n⋮ Umur :\n⋮ Agama :\n⋮ Kelas :\n╰―𖤣𖥧𖡼.𖤣𖥧𖡼.𖤣𖥧𖡼.𖤣𖥧𖡼.𖤣𖥧𖡼.𖤣𖡼.𖤣𖤣\nSelamat Bergabung.`;
+					messageText = `Selamat Datang @${n.split('@')[0]} Silahkan Intro Dulu Ya Kak😊\n\n╭―════⊹⊱≼≽⊰⊹══════―\n⋮ Nama :\n⋮ Umur :\n⋮ Agama :\n⋮ Kelas :\n⋮ Alamat :\n╰―𖤣𖥧𖡼.𖤣𖥧𖡼.𖤣𖥧𖡼.𖤣𖥧𖡼.𖤣𖥧𖡼.𖤣𖡼.𖤣𖤣\n\nSelamat Bergabung.`;
 					metadata.participants.push({ id: jidNormalizedUser(n), admin: null });
 				} else if (action === 'remove') {
 					messageText = `Good Bye @${n.split('@')[0]}`;
